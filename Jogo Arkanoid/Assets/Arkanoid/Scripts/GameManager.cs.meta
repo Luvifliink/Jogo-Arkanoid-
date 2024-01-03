@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 24bd62c95477bfe4497b56b6c7436d52
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - PlayerPrefab: {instanceID: 0}
+  - BallPrefab: {instanceID: 0}
+  - PlayerSpawnPoint: {instanceID: 0}
+  - BallSpawnPoint: {instanceID: 0}
+  - PlayerAtual: {instanceID: 0}
+  - BallAtual: {instanceID: 0}
+  - Contador: {instanceID: 0}
+  - MensagemFinal: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
