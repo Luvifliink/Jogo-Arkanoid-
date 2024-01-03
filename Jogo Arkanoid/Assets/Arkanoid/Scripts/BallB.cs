@@ -34,7 +34,11 @@ public class BallB : MonoBehaviour
             Destroy(col.gameObject);
             GameManager.instance.SubtrairTijolo();
         }
-        
+
+        if (col.gameObject.CompareTag("GameOver"))
+        {
+            GameManager.instance.SubtrairVida();
+        }
 
         direcao = Vector2.Reflect(direcao, col.contacts[0].normal);
         rb.velocity = direcao.normalized * velocidade;

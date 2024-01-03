@@ -68,7 +68,20 @@ public void SubtrairTijolo()
 
 public void SubtrairVida()
 {
-    
+    Vidas--;
+    AtualizarContador();
+    Destroy(PlayerAtual.gameObject);
+    Destroy(BallAtual.gameObject);
+
+    if (Vidas <= 0)
+    {
+        GameOver();
+    }
+
+    else
+    {
+        Invoke(nameof(SpawnarJogador),2);
+    }
 }
 
 public void Vitoria()
@@ -80,7 +93,8 @@ public void Vitoria()
 
 public void GameOver()
 {
-    
+    MensagemFinal.text = "Game Over";
+    Invoke(nameof(Reiniciarcena),2);
 }
 
 public void Reiniciarcena()
