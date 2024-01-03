@@ -32,6 +32,7 @@ public class BallB : MonoBehaviour
         if (col.gameObject.CompareTag("Tijolo"))
         {
             Destroy(col.gameObject);
+            GameManager.instance.SubtrairTijolo();
         }
         
 

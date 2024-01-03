@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -34,11 +35,12 @@ void Start()
 {
     SpawnarJogador();
     AtualizarContador();
+    TijolosRestantes = GameObject.FindGameObjectsWithTag("Tijolo").Length;
 }
 
 public void AtualizarContador()
 {
-    Contador.text = $"Vidas:{Vidas}";
+    Contador.text = $"Vidas: {Vidas}";
 }
 
 public void SpawnarJogador()
@@ -52,6 +54,38 @@ public void SpawnarJogador()
     Segurando = true;
     offset = PlayerAtual.transform.position - BallAtual.transform.position;
 
+}
+
+public void SubtrairTijolo()
+{
+    TijolosRestantes--;
+
+    if (TijolosRestantes <= 0)
+    {
+        Vitoria();
+    }
+}
+
+public void SubtrairVida()
+{
+    
+}
+
+public void Vitoria()
+{
+    MensagemFinal.text = "Parabéns!";
+    Destroy(BallAtual.gameObject);
+    Invoke(nameof(Reiniciarcena),2);
+}
+
+public void GameOver()
+{
+    
+}
+
+public void Reiniciarcena()
+{
+    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 }
 
     void Update()
